@@ -73,7 +73,7 @@ const posts = [
 
 
 schedule('*/15 * * * *', async () => {
-    const browser = await puppeteer.launch({headless: true});
+    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
 
     const currentBuy = shuffle(posts);
     try {
